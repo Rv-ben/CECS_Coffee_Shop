@@ -9,7 +9,7 @@ import enums.*;
 import Products.Coffee;
 import Products.Drink;
 
-public class DrinkFactory extends Factory{
+public class DrinkFactory implements Factory{
 
 
     @Override

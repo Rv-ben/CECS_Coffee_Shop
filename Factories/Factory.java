@@ -2,11 +2,7 @@ package Factories;
 
 import Products.Product;
 
-public abstract class Factory{
-
-    Factory(){
-
-    }
+public interface Factory{
 
     public abstract Product createProduct();
 
