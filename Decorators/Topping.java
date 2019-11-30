@@ -1,16 +1,16 @@
 package Decorators;
 
-import Products.Product;
+import Products.Drink;
 
-public abstract class Topping extends Product{
+public abstract class Topping extends Drink{
 
-    private Product base;
+    protected Drink base;
 
-    Topping(Product base,String description,double cost){
-        super(description, cost);
+    Topping(Drink base){
+        this.base = base;
     }
 
-    public Product getBase(){
+    public Drink getBase(){
         return base;
     }
 
