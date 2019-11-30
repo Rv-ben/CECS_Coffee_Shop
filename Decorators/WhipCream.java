@@ -11,19 +11,18 @@ import Products.Drink;
  *
  * @author tansr
  */
-public class SoyMilk extends Milk {
-    
-    public SoyMilk(Drink base){
+public class WhipCream extends Topping{
+        public WhipCream(Drink base){
         super(base);
     }
 
     @Override
     public String getDescription() {
-        return base.getDescription() + "Added: Soy Milk";
+        return base.getDescription() + "Added: Whip cream";
     }
 
     @Override
     public double getCost() {
-        return base.getCost() + .50;
+        return base.getCost() + .5;
     }
 }

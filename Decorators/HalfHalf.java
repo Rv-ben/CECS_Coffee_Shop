@@ -23,6 +23,6 @@ public class HalfHalf extends Milk {
 
     @Override
     public double getCost() {
-        return base.getCost() + 1;
+        return base.getCost() + .25;
     }
 }
