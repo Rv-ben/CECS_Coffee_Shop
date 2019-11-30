@@ -1,22 +1,10 @@
 package Products;
 
-public abstract class Product{
+public interface Product{
 
-    private String description;
+    public abstract String getDescription();
 
-    private double cost;
+    public abstract double getCost();
     
-    public Product(String description, double cost){
-        this.description = description;
-        this.cost = cost;
-    }
-
-    public String getDescription(){
-        return description;
-    }
-
-    public double getCost(){
-        return cost;
-    }
 
 }
