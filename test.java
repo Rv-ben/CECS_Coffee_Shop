@@ -5,6 +5,7 @@ import Products.Product;
 import enums.DrinkTypes;
 import enums.Sizes;
 import enums.ToppingTypes;
+import enums.TypeSizeStruct;
 
 public class test{
     public static void main(String args[]) {
@@ -14,7 +15,12 @@ public class test{
 
         DrinkFactory Dfactory = new DrinkFactory();
 
-        Product p = Dfactory.createProduct(DrinkTypes.coffee,listOfToppingTypes,Sizes.medium);
+        TypeSizeStruct typeSize = new TypeSizeStruct();
+
+        typeSize.size = Sizes.small;
+        typeSize.type = DrinkTypes.coffee;
+
+        Product p = Dfactory.createProduct(typeSize,listOfToppingTypes);
 
         System.out.println(p.getCost());
 
