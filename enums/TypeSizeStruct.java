@@ -9,4 +9,5 @@ package enums;
 public class TypeSizeStruct{
     public Sizes size;
     public DrinkTypes type;
+    public DrinkTypes spec;
 }
