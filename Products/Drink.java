@@ -8,13 +8,16 @@ public abstract class Drink implements Product {
 
     Sizes size;
 
+    DrinkTypes spec;
+
     public Drink(){
 
     }
 
-    public Drink(String name, Sizes size){
+    public Drink(String name, Sizes size, DrinkTypes spec){
         this.name = name;
         this.size = size;
+        this.spec = spec;
     }
 
     public double getCost(){
