@@ -28,7 +28,7 @@ public class DrinkFactory implements Factory{
         TypeSizeStruct details = (TypeSizeStruct)typeSize;
 
 
-        drink = drinkType(details.type, details.size);
+        drink = drinkType(details.type, details.size,details.spec);
 
         
         for(ToppingTypes i: (ArrayList<ToppingTypes>)decorators){
@@ -44,9 +44,9 @@ public class DrinkFactory implements Factory{
      * @param size Size Enum
      * @return Drink Object, null if not listed
      */
-    public Drink drinkType(DrinkTypes type,Sizes size){
+    public Drink drinkType(DrinkTypes type,Sizes size,DrinkTypes spec){
         switch(type){
-            case coffee: return new Coffee(size);
+            case coffee: return new Coffee(size,spec);
         }
         return null;
     }
