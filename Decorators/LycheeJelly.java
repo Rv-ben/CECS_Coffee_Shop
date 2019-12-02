@@ -11,7 +11,7 @@ import Products.Drink;
  *
  * @author tansr
  */
-public class LycheeJelly  extends Jelly {
+public class LycheeJelly  extends Topping {
     
     public LycheeJelly(Drink base){
         super(base);

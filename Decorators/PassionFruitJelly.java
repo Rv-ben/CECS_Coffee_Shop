@@ -9,6 +9,6 @@ package Decorators;
  *
  * @author tansr
  */
-public class PassionFruitJelly {
+public class PassionFruitJelly extends Topping {
     
 }
