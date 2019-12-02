@@ -60,7 +60,17 @@ public class DrinkFactory implements Factory{
     public Drink addDecorators(ToppingTypes topping,Drink drink){
 
         switch(topping){
-            //case milk: return new Milk(drink);
+            case milk: return new Milk(drink);
+            case soyMilk: return new SoyMilk(drink);
+            case halfHalf: return new HalfHalf(drink);
+            case boba: return new Boba(drink);
+            case poppingBoba: return new PoppingBoba(drink);
+            case jelly: return new Jelly(drink);
+            
+            case lycheeJelly: return new LycheeJelly(drink);
+            case grassJelly: return new GrassJelly(drink);
+            case coconutJelly: return new CoconutJelly(drink);
+            case whipCream: return new WhipCream(drink);
         }
         return drink;
     }
