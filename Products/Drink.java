@@ -1,6 +1,6 @@
 package Products;
 
-import enums.Sizes;
+import enums.*;
 
 public abstract class Drink implements Product {
     
