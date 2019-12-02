@@ -1,28 +1,33 @@
 import java.util.ArrayList;
 
-import Factories.DrinkFactory;
-import Products.Product;
-import enums.DrinkTypes;
-import enums.Sizes;
-import enums.ToppingTypes;
-import enums.TypeSizeStruct;
+import Factories.*;
+import Products.*;
+import enums.*;
 
 public class test{
     public static void main(String args[]) {
         ArrayList<ToppingTypes> listOfToppingTypes = new ArrayList<ToppingTypes>();
-
-        listOfToppingTypes.add(ToppingTypes.milk);
+        //listOfToppingTypes = null;
 
         DrinkFactory Dfactory = new DrinkFactory();
 
-        TypeSizeStruct typeSize = new TypeSizeStruct();
+        TypeSizeStruct tea = new TypeSizeStruct();
 
-        typeSize.size = Sizes.small;
-        typeSize.type = DrinkTypes.coffee;
+        TypeSizeStruct coffee = new TypeSizeStruct();
 
-        Product p = Dfactory.createProduct(typeSize,listOfToppingTypes);
+        tea.size = Sizes.large;
+        tea.type = DrinkTypes.tea;
+        tea.spec = DrinkTypes.summerMintTea;
+
+        coffee.size = Sizes.medium;
+        coffee.type = DrinkTypes.coffee;
+        coffee.spec = DrinkTypes.almondLatte;
+
+        Product p = Dfactory.createProduct(tea,listOfToppingTypes);
+
+        Product p1 = Dfactory.createProduct(coffee, listOfToppingTypes);;
 
         System.out.println(p.getCost());
-
+        System.out.println(p1.getCost());
     }
 }

@@ -1,5 +1,5 @@
 package enums;
 
 public enum DrinkTypes{
-    coffee;
+    coffee, tea, almondLatte, darkRoast, hazelnutLatte, pumpkinSpiceLatte, milkTea, jasmineGreenTea, summerMintTea;
 }

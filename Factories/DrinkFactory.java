@@ -4,10 +4,9 @@ import Products.Product;
 
 import java.util.ArrayList;
 
-import Decorators.Milk;
+import Decorators.*;
 import enums.*;
-import Products.Coffee;
-import Products.Drink;
+import Products.*;
 
 /**
  * Drink Factory class, implements Factory
@@ -47,6 +46,7 @@ public class DrinkFactory implements Factory{
     public Drink drinkType(DrinkTypes type,Sizes size,DrinkTypes spec){
         switch(type){
             case coffee: return new Coffee(size,spec);
+            case tea: return new Tea(size, spec);
         }
         return null;
     }
@@ -58,8 +58,19 @@ public class DrinkFactory implements Factory{
      * @return Drink Object, base drink if not found
      */
     public Drink addDecorators(ToppingTypes topping,Drink drink){
+
         switch(topping){
             case milk: return new Milk(drink);
+            case soyMilk: return new SoyMilk(drink);
+            case halfHalf: return new HalfHalf(drink);
+            case boba: return new Boba(drink);
+            case poppingBoba: return new PoppingBoba(drink);
+            case jelly: return new Jelly(drink);
+            
+            case lycheeJelly: return new LycheeJelly(drink);
+            case grassJelly: return new GrassJelly(drink);
+            case coconutJelly: return new CoconutJelly(drink);
+            case whipCream: return new WhipCream(drink);
         }
         return drink;
     }
