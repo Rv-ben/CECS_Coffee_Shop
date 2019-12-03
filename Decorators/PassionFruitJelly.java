@@ -5,10 +5,24 @@
  */
 package Decorators;
 
+import Products.Drink;
 /**
  *
  * @author tansr
  */
 public class PassionFruitJelly extends Topping {
-    
+    public PassionFruitJelly(Drink base){
+        super(base);
+    }
+
+    @Override
+    public String getDescription() {
+        return base.getDescription() + "Added: Passion Fruit Jelly";
+    }
+
+    @Override
+    public double getCost() {
+        return base.getCost() + .50;
+    }
+
 }
