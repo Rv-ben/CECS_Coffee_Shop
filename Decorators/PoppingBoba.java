@@ -9,7 +9,7 @@ import Products.Drink;
  *
  * @author tansr
  */
-public class PoppingBoba extends Boba {
+public class PoppingBoba extends Topping {
     
     public PoppingBoba(Drink base){
         super(base);
