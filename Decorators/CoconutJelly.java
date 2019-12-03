@@ -11,7 +11,7 @@ import Products.Drink;
  *
  * @author tansr
  */
-public class CoconutJelly extends Jelly {
+public class CoconutJelly extends Topping {
     
     public CoconutJelly(Drink base){
         super(base);
