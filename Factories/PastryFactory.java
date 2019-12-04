@@ -1,4 +1,4 @@
-
+package Factories;
 
 import java.util.ArrayList;
 
@@ -56,7 +56,7 @@ public class PastryFactory implements Factory{
      * @return
      */
     public Product getPastry(Object pastryType, Object spec) {
-        switch (pastryType) {
+        switch ((PastryTypes)pastryType) {
         case cookie:
             if (spec == PastryTypes.oatmeal)
                 return new Cookie(PastryTypes.cookie, PastryTypes.oatmeal);
