@@ -19,7 +19,7 @@ public class GrassJelly extends Topping {
 
     @Override
     public String getDescription() {
-        return base.getDescription() + "Added: Grass Jelly";
+        return base.getDescription() + "Added: Grass Jelly\n";
     }
 
     @Override

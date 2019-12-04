@@ -19,7 +19,7 @@ public class SoyMilk extends Topping {
 
     @Override
     public String getDescription() {
-        return base.getDescription() + "Added: Soy Milk";
+        return base.getDescription() + "Added: Soy Milk\n";
     }
 
     @Override

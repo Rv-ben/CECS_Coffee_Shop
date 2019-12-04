@@ -31,6 +31,6 @@ public class Coffee extends Drink {
     }
 
     public String getDescription(){
-        return spec.name();
+        return spec.name() + "\n";
     }
 }

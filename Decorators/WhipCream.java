@@ -18,7 +18,7 @@ public class WhipCream extends Topping{
 
     @Override
     public String getDescription() {
-        return base.getDescription() + "Added: Whip cream";
+        return base.getDescription() + "Added: Whip cream\n";
     }
 
     @Override

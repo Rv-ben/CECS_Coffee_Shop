@@ -26,7 +26,7 @@ public class Croissant extends Pastry{
     }
     public String getDescription(){
         if (heated)
-            return "Heated: " + spec.name();
-       return spec.name();
+            return "Heated: " + spec.name()+ "\n";
+       return spec.name()+ "\n";
     }
 }

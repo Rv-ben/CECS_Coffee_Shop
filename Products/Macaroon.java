@@ -19,6 +19,6 @@ public class Macaroon extends Pastry{
         return cost;
     }
     public String getDescription(){
-       return spec.name();
+       return spec.name()+ "\n";
     }
 }
