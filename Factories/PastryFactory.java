@@ -1,5 +1,7 @@
 package Factories;
 
+import Products.Product;
+
 import java.util.ArrayList;
 
 import Decorators.*;
@@ -21,8 +23,8 @@ public class PastryFactory implements Factory{
      * @return Product Object 
      */
     public Product createProduct(Object pastryType, Object spec) {
-        Pastry pastry = null;
-        pastry = (Pastry) getPastry(pastryType, spec);
+        Product pastry = null;
+        pastry = getPastry(pastryType, spec);
         
         return pastry;
     }
@@ -35,28 +37,20 @@ public class PastryFactory implements Factory{
      * @return 
      */
     public Product createProduct(Object pastryType, Object spec, boolean heated) {
-        Pastry pastry = null;
-    	//PastryTypes specific;
-        switch((PastryTypes)spec) {
-            case chocolateNut:
-                //specific = PastryTypes.chocolateNut;
-                if (heated) {
-                	pastry = new Croissant(PastryTypes.croissant, PastryTypes.chocolateNut, true);
-                }
-                pastry = new Croissant(PastryTypes.croissant, PastryTypes.chocolateNut, false);
-            case plain:
-                //specific = PastryTypes.plain;       
-                if (heated) {
-                	pastry = new Croissant(PastryTypes.croissant, PastryTypes.plain, true);
-                }
-                pastry =  new Croissant(PastryTypes.croissant, PastryTypes.plain, false);
+        PastryTypes specific;
+        switch(spec) {
+            case PastryTypes.chocolateNut:
+                specific = chocolateNut;
+                break;
+            case PastryTypes.plain:
+                specific = plain;   
+                break;         
         }
-//
-//        if (heated) {
-//            return new Croissant(PastryTypes.croissant, specific, true);
-//        }
-//        return new Croissant(PastryTypes.croissant, specific, false);
-		return pastry;
+
+        if (heated) {
+            return new Pastry(PastryTypes.croissant, specific, true);
+        }
+        return new Pastry(PastryTypes.croissant, specific, false);
     }
 
     /**
@@ -69,10 +63,10 @@ public class PastryFactory implements Factory{
         switch ((PastryTypes)pastryType) {
         case cookie:
             if (spec == PastryTypes.oatmeal)
-                return new Cookie(PastryTypes.cookie, PastryTypes.oatmeal);
-            return new Cookie(PastryTypes.cookie, PastryTypes.plain);
+                return new Pastry(PastryTypes.cookie, PastryTypes.oatmeal);
+            return new Pastry(PastryTypes.cookie, PastryTypes.plain);
         case macaroon:
-            return new Macaroon(PastryTypes.macaroon, PastryTypes.variety);
+            return new Pastry(PastryTypes.macaroon, PastryTypes.variety);
         }
 		return null;
     }
