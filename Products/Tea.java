@@ -28,6 +28,6 @@ public class Tea extends Drink {
     }
     public String getDescription(){
     	
-       return spec.name();
+       return spec.name()+ "\n";
     }
 }

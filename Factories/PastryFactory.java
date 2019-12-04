@@ -2,7 +2,6 @@ package Factories;
 
 import Products.Product;
 
-
 import java.util.ArrayList;
 
 import Decorators.*;
@@ -61,7 +60,7 @@ public class PastryFactory implements Factory{
      * @return
      */
     public Product getPastry(Object pastryType, Object spec) {
-        switch (pastryType) {
+        switch ((PastryTypes)pastryType) {
         case cookie:
             if (spec == PastryTypes.oatmeal)
                 return new Pastry(PastryTypes.cookie, PastryTypes.oatmeal);
@@ -69,5 +68,6 @@ public class PastryFactory implements Factory{
         case macaroon:
             return new Pastry(PastryTypes.macaroon, PastryTypes.variety);
         }
+		return null;
     }
 }

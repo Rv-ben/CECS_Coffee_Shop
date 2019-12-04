@@ -19,7 +19,7 @@ public class LycheeJelly extends Topping {
 
     @Override
     public String getDescription() {
-        return base.getDescription() + "Added: Lychee Jelly";
+        return base.getDescription() + "Added: Lychee Jelly\n";
     }
 
     @Override
