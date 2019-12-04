@@ -30,6 +30,6 @@ public class test{
         System.out.println(p.getCost());
         System.out.println(p1.getCost());
 
-        //Vanessa this is a test
+        //Dolly this is a test
     }
 }

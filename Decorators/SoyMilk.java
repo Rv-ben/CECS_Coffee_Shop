@@ -11,7 +11,7 @@ import Products.Drink;
  *
  * @author tansr
  */
-public class SoyMilk extends Milk {
+public class SoyMilk extends Topping {
     
     public SoyMilk(Drink base){
         super(base);

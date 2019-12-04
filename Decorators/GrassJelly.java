@@ -11,7 +11,7 @@ import Products.Drink;
  *
  * @author tansr
  */
-public class GrassJelly  extends Jelly {
+public class GrassJelly extends Topping {
     
     public GrassJelly(Drink base){
         super(base);
