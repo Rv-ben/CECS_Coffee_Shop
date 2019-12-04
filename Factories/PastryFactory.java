@@ -23,43 +23,15 @@ public class PastryFactory implements Factory{
     public Product createProduct(Object type, Object det) {
         Pastry pastry;
 
-        //TypeSizeStruct details = (TypeSizeStruct)type;
-        pastry = (Pastry) getPastry((TypeSizeStruct)type);
+        TypeSizeStruct details = new TypeSizeStruct();
 
-        return pastry;
+        switch(details.pType){
+            case croissant: return new Croissant(details.pType,details.special,details.heated);
+            case cookie: return new Cookie(details.pType,details.special);
+            case macaroon: return new Macaroon(details.pType, details.special);
+
+        }
+        return null;
     }
 
-    /**
-     * creates a pastry object given details
-     * @param details
-     * @return
-     */
-    public Product getPastry(Object type) {
-        TypeSizeStruct details = (TypeSizeStruct)type;
-        if (details.pType == PastryTypes.croissant){
-            if (details.heated) {
-                switch (details.special) {
-                    case plain: return new Croissant(details.pType, details.special, true);
-                    case chocolateNut: return new Croissant(details.pType, details.special, true);
-                }
-            }
-            else if (!details.heated) {
-                switch (details.special) {
-                    case plain: return new Croissant(details.pType, details.special, false);
-                    case chocolateNut: return new Croissant(details.pType, details.special, false);
-                }
-            }
-        }
-        
-        else if (details.pType == PastryTypes.macaroon)
-            return new Macaroon(details.pType, details.special);
-        else if (details.pType == PastryTypes.cookie) {
-            switch (details.special) {
-                case oatmeal: return new Cookie(details.pType, details.special);
-                case plain: return new Cookie(details.pType, details.special);
-            }
-        }
-
-		return null;
-    }
 }
