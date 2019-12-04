@@ -20,13 +20,13 @@ public abstract class Pastry implements Product {
         double cost = 0;
         switch (general) {
            case croissant:
-                cost += 2;
+                cost = 2;
                 break;
             case cookie:
-                cost += 1.00;
+                cost = 1.00;
                 break;
             case macaroon:
-                cost += 2.00;
+                cost = 2.00;
                 break;
         }
         return cost;

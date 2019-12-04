@@ -10,39 +10,139 @@ public class test{
         ArrayList<Product> listOfProducts = new ArrayList<Product>();
 
         DrinkFactory Dfactory = new DrinkFactory();
-        TypeSizeStruct tea = new TypeSizeStruct();
-        TypeSizeStruct coffee = new TypeSizeStruct();
-        PastryFactory croissant = new PastryFactory();
+        TypeSizeStruct details = new TypeSizeStruct();
+        PastryFactory Pfactory = new PastryFactory();
 
-        // creating tea
-        tea.size = Sizes.large;
-        tea.type = DrinkTypes.tea;
-        tea.spec = DrinkTypes.summerMintTea;
+        details.spec = DrinkTypes.almondLatte;
+        details.type = DrinkTypes.coffee;
+        details.size = Sizes.medium;
+        listOfToppingTypes.add(ToppingTypes.whipCream);
+        listOfProducts.add(Dfactory.createProduct(details, listOfToppingTypes));
+        listOfToppingTypes.clear();
 
-        // creating coffee
-        coffee.size = Sizes.medium;
-        coffee.type = DrinkTypes.coffee;
-        coffee.spec = DrinkTypes.almondLatte;
+        details.spec = DrinkTypes.darkRoast;
+        details.type = DrinkTypes.coffee;
+        details.size = Sizes.large;
+        listOfProducts.add(Dfactory.createProduct(details, listOfToppingTypes));
 
-        // adding toppings
+        details.spec = DrinkTypes.hazelnutLatte;
+        details.type = DrinkTypes.coffee;
+        details.size = Sizes.small;
+        listOfToppingTypes.add(ToppingTypes.soyMilk);
+        listOfToppingTypes.add(ToppingTypes.whipCream);
+        listOfProducts.add(Dfactory.createProduct(details, listOfToppingTypes));
+        listOfToppingTypes.clear();
+
+        details.spec = DrinkTypes.pumpkinSpiceLatte;
+        details.type = DrinkTypes.coffee;
+        details.size = Sizes.small;
+        listOfToppingTypes.add(ToppingTypes.halfHalf);
+        listOfToppingTypes.add(ToppingTypes.whipCream);
+        listOfProducts.add(Dfactory.createProduct(details, listOfToppingTypes));
+        listOfToppingTypes.clear();
+
+        details.spec = DrinkTypes.jasmineGreenTea;
+        details.type = DrinkTypes.tea;
+        details.size = Sizes.large;
+        details.sweetness = 0.25;
+        listOfToppingTypes.add(ToppingTypes.soyMilk);
         listOfToppingTypes.add(ToppingTypes.boba);
-        listOfToppingTypes.add(ToppingTypes.poppingBoba);
+        listOfToppingTypes.add(ToppingTypes.coconutJelly);
+        listOfProducts.add(Dfactory.createProduct(details, listOfToppingTypes));
+        listOfToppingTypes.clear();
+
+        details.spec = DrinkTypes.summerMintTea;
+        details.type = DrinkTypes.tea;
+        details.size = Sizes.large;
+        details.sweetness = 0.50;
+        listOfToppingTypes.add(ToppingTypes.passionFruitJelly);
         listOfToppingTypes.add(ToppingTypes.freshStrawberry);
+        listOfToppingTypes.add(ToppingTypes.coconutJelly);
+        listOfProducts.add(Dfactory.createProduct(details, listOfToppingTypes));
+        listOfToppingTypes.clear();
 
-        // creating products
-        final Product p = Dfactory.createProduct(tea, listOfToppingTypes);
-        final Product p1 = Dfactory.createProduct(coffee, listOfToppingTypes);
-        final Product p2 = croissant.createProduct(PastryTypes.croissant, PastryTypes.chocolateNut, true);
+        details.spec = DrinkTypes.milkTea;
+        details.type = DrinkTypes.tea;
+        details.size = Sizes.medium;
+        details.sweetness = 0.50;
+        listOfToppingTypes.add(ToppingTypes.halfHalf);
+        listOfToppingTypes.add(ToppingTypes.boba);
+        listOfProducts.add(Dfactory.createProduct(details, listOfToppingTypes));
+        listOfToppingTypes.clear();
 
-        // adding products into the arraylist
-        listOfProducts.add(p);
-        listOfProducts.add(p1);
-        listOfProducts.add(p2);
+        details.spec = DrinkTypes.milkTea;
+        details.type = DrinkTypes.tea;
+        details.size = Sizes.medium;
+        details.sweetness = 0.50;
+        listOfToppingTypes.add(ToppingTypes.halfHalf);
+        listOfToppingTypes.add(ToppingTypes.boba);
+        listOfProducts.add(Dfactory.createProduct(details, listOfToppingTypes));
+        listOfToppingTypes.clear();
 
-        // displaying the all products
-        for (int i = 0; i < listOfProducts.size(); i++){
-            System.out.println(listOfProducts.get(0).getCost());
-            System.out.println(listOfProducts.get(0).getDescription());
-        }
+        // making pastries
+        details.heated = false;
+        details.special = PastryTypes.chocolateNut;
+        details.pType = PastryTypes.croissant;
+        listOfProducts.add(Pfactory.createProduct(null, details));
+
+        details.heated = true;
+        details.special = PastryTypes.plain;
+        details.pType = PastryTypes.croissant;
+        listOfProducts.add(Pfactory.createProduct(null, details));
+
+        details.qty = 7;
+        details.special = PastryTypes.oatmeal;
+        details.pType = PastryTypes.cookie;
+        listOfProducts.add(Pfactory.createProduct(null, details));
+
+        details.qty = 7;
+        details.special = PastryTypes.variety;
+        details.pType = PastryTypes.macaroon;
+        listOfProducts.add(Pfactory.createProduct(null, details));
+
+        Receipt r = new Receipt(listOfProducts, .10);
+
+
+        r.printReceipt();
+
+
+
+
+
+
+
+
+
+
+
+        // TypeSizeStruct d = new TypeSizeStruct();
+        // d.heated = true;
+        // d.special= PastryTypes.chocolateNut;
+        // d.pType = PastryTypes.croissant;
+
+        // croissant.createProduct(null, d);
+
+        // d.heated = false;
+        // d.special = PastryTypes.cookie;
+        // d.pType = PastryTypes.oatmeal;
+        // listOfProducts.add(croissant.createProduct(null, d));
+
+        // // creating products
+        // Product p = Dfactory.createProduct(tea, listOfToppingTypes);
+        // Product p1 = Dfactory.createProduct(coffee, listOfToppingTypes);
+        // // final Product p2 = croissant.createProduct(PastryTypes.croissant, PastryTypes.chocolateNut, true);
+        // // final Product p3 = cookie.createProduct(PastryTypes.cookie, PastryTypes.oatmeal);
+
+        // // adding products into the arraylist
+        // listOfProducts.add(p);
+        // listOfProducts.add(p1);
+        // // listOfProducts.add(p2);
+        // // listOfProducts.add(p3);
+
+        // // displaying the all products
+        // for (int i = 0; i < listOfProducts.size(); i++){
+        //     System.out.println(listOfProducts.get(0).getCost());
+        //     System.out.println(listOfProducts.get(0).getDescription());
+        // }
     }
 }

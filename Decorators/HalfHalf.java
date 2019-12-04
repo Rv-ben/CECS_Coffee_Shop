@@ -23,6 +23,6 @@ public class HalfHalf extends Topping {
 
     @Override
     public double getCost() {
-        return base.getCost() + .50;
+        return base.getCost() + .25;
     }
 }

@@ -23,7 +23,7 @@ public class PastryFactory implements Factory{
     public Product createProduct(Object type, Object det) {
         Pastry pastry;
 
-        TypeSizeStruct details = new TypeSizeStruct();
+        TypeSizeStruct details = (TypeSizeStruct)det;
 
         switch(details.pType){
             case croissant: return new Croissant(details.pType,details.special,details.heated);
