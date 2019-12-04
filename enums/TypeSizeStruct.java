@@ -12,4 +12,6 @@ public class TypeSizeStruct{
     public DrinkTypes spec;
     public boolean heated;
     public double sweetness;
+    public PastryTypes pType;
+    public PastryTypes special;
 }
