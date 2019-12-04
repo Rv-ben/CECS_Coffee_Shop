@@ -14,4 +14,5 @@ public class TypeSizeStruct{
     public double sweetness;
     public PastryTypes pType;
     public PastryTypes special;
+    public int qty;
 }

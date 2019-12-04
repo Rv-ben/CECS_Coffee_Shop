@@ -27,9 +27,8 @@ public class PastryFactory implements Factory{
 
         switch(details.pType){
             case croissant: return new Croissant(details.pType,details.special,details.heated);
-            case cookie: return new Cookie(details.pType,details.special);
-            case macaroon: return new Macaroon(details.pType, details.special);
-
+            case cookie: return new Cookie(details.pType,details.special,details.qty);
+            case macaroon: return new Macaroon(details.pType, details.special,details.qty);
         }
         return null;
     }
