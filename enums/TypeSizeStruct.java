@@ -10,4 +10,6 @@ public class TypeSizeStruct{
     public Sizes size;
     public DrinkTypes type;
     public DrinkTypes spec;
+    public boolean heated;
+    public double sweetness;
 }
