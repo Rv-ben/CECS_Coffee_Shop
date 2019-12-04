@@ -1,7 +1,5 @@
 package Factories;
 
-import Products.Product;
-
 import java.util.ArrayList;
 
 import Decorators.*;
@@ -17,57 +15,51 @@ import Products.*;
 public class PastryFactory implements Factory{
 
     /**
-     * Creates Pastry product given details of size/type and decoratorators
+     * Creates Pastry product given details of type and decoratorators
      * @param pastryType PastryTypes Object
      * @param quantity int 
      * @return Product Object 
      */
-    public Product createProduct(Object pastryType, Object spec) {
-        Product pastry = null;
-        pastry = getPastry(pastryType, spec);
-        
+    public Product createProduct(Object type, Object det) {
+        Pastry pastry;
+
+        //TypeSizeStruct details = (TypeSizeStruct)type;
+        pastry = (Pastry) getPastry((TypeSizeStruct)type);
+
         return pastry;
     }
 
     /**
-     * overloaded method that creates a Croissant
-     * @param pastryType
-     * @param spec
-     * @param heated
-     * @return 
-     */
-    public Product createProduct(Object pastryType, Object spec, boolean heated) {
-        PastryTypes specific;
-        switch(spec) {
-            case PastryTypes.chocolateNut:
-                specific = chocolateNut;
-                break;
-            case PastryTypes.plain:
-                specific = plain;   
-                break;         
-        }
-
-        if (heated) {
-            return new Pastry(PastryTypes.croissant, specific, true);
-        }
-        return new Pastry(PastryTypes.croissant, specific, false);
-    }
-
-    /**
-     * creates a pastry object given type and specific type
-     * @param pastryType
-     * @param spec
+     * creates a pastry object given details
+     * @param details
      * @return
      */
-    public Product getPastry(Object pastryType, Object spec) {
-        switch ((PastryTypes)pastryType) {
-        case cookie:
-            if (spec == PastryTypes.oatmeal)
-                return new Pastry(PastryTypes.cookie, PastryTypes.oatmeal);
-            return new Pastry(PastryTypes.cookie, PastryTypes.plain);
-        case macaroon:
-            return new Pastry(PastryTypes.macaroon, PastryTypes.variety);
+    public Product getPastry(Object type) {
+        TypeSizeStruct details = (TypeSizeStruct)type;
+        if (details.pType == PastryTypes.croissant){
+            if (details.heated) {
+                switch (details.special) {
+                    case plain: return new Croissant(details.pType, details.special, true);
+                    case chocolateNut: return new Croissant(details.pType, details.special, true);
+                }
+            }
+            else if (!details.heated) {
+                switch (details.special) {
+                    case plain: return new Croissant(details.pType, details.special, false);
+                    case chocolateNut: return new Croissant(details.pType, details.special, false);
+                }
+            }
         }
+        
+        else if (details.pType == PastryTypes.macaroon)
+            return new Macaroon(details.pType, details.special);
+        else if (details.pType == PastryTypes.cookie) {
+            switch (details.special) {
+                case oatmeal: return new Cookie(details.pType, details.special);
+                case plain: return new Cookie(details.pType, details.special);
+            }
+        }
+
 		return null;
     }
 }
