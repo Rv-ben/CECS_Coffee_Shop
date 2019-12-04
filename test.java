@@ -8,6 +8,7 @@ public class test{
     public static void main(final String args[]) {
         final ArrayList<ToppingTypes> listOfToppingTypes = new ArrayList<ToppingTypes>();
         // listOfToppingTypes = null;
+        final ArrayList<Product> listOfProduct = new ArrayList<Product>();
 
         final DrinkFactory Dfactory = new DrinkFactory();
 
@@ -18,6 +19,7 @@ public class test{
         tea.size = Sizes.large;
         tea.type = DrinkTypes.tea;
         tea.spec = DrinkTypes.summerMintTea;
+
         listOfToppingTypes.add(ToppingTypes.boba);
         listOfToppingTypes.add(ToppingTypes.poppingBoba);
         listOfToppingTypes.add(ToppingTypes.freshStrawberry);
@@ -30,11 +32,15 @@ public class test{
 
         final Product p1 = Dfactory.createProduct(coffee, listOfToppingTypes);
         
+        listOfProduct.add(p);
+        listOfProduct.add(p1);
 
-        System.out.println(p.getCost());
-        System.out.println(p.getDescription());
-        System.out.println(p1.getCost());
-        System.out.println(p1.getDescription());
+        for (int i = 0; i < listOfProduct.size(); i++){
+            System.out.println(listOfProduct.get(0).getCost());
+            System.out.println(listOfProduct.get(0).getDescription());
+        }
+
+        
 
         //Dolly this is a test
     }
