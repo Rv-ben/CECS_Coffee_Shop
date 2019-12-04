@@ -18,11 +18,11 @@ public class HalfHalf extends Topping {
 
     @Override
     public String getDescription() {
-        return base.getDescription() + "Added: Milk";
+        return base.getDescription() + "Added: Half and Half";
     }
 
     @Override
     public double getCost() {
-        return base.getCost() + .25;
+        return base.getCost() + .50;
     }
 }
