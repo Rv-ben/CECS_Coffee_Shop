@@ -20,6 +20,6 @@ public class Cookie extends Pastry{
         return cost;
     }
     public String getDescription(){
-       return spec.name();
+       return spec.name() + "\n";
     }
 }

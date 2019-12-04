@@ -5,15 +5,15 @@ import Products.*;
 import enums.*;
 
 public class test{
-    public static void main(String args[]) {
-        ArrayList<ToppingTypes> listOfToppingTypes = new ArrayList<ToppingTypes>();
-        //listOfToppingTypes = null;
+    public static void main(final String args[]) {
+        final ArrayList<ToppingTypes> listOfToppingTypes = new ArrayList<ToppingTypes>();
+        // listOfToppingTypes = null;
 
-        DrinkFactory Dfactory = new DrinkFactory();
+        final DrinkFactory Dfactory = new DrinkFactory();
 
-        TypeSizeStruct tea = new TypeSizeStruct();
+        final TypeSizeStruct tea = new TypeSizeStruct();
 
-        TypeSizeStruct coffee = new TypeSizeStruct();
+        final TypeSizeStruct coffee = new TypeSizeStruct();
 
         tea.size = Sizes.large;
         tea.type = DrinkTypes.tea;
@@ -26,9 +26,10 @@ public class test{
         coffee.type = DrinkTypes.coffee;
         coffee.spec = DrinkTypes.almondLatte;
 
-        Product p = Dfactory.createProduct(tea,listOfToppingTypes);
+        final Product p = Dfactory.createProduct(tea, listOfToppingTypes);
 
-        Product p1 = Dfactory.createProduct(coffee, listOfToppingTypes);;
+        final Product p1 = Dfactory.createProduct(coffee, listOfToppingTypes);
+        
 
         System.out.println(p.getCost());
         System.out.println(p.getDescription());
