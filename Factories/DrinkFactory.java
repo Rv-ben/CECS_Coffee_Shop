@@ -73,6 +73,7 @@ public class DrinkFactory implements Factory{
             case grassJelly: return new GrassJelly(drink);
             case coconutJelly: return new CoconutJelly(drink);
             case whipCream: return new WhipCream(drink);
+            case freshStrawberry: return new FreshStrawberry(drink);
         }
         return drink;
     }
