@@ -39,8 +39,10 @@ public class PastryFactory implements Factory{
         switch(spec) {
             case PastryTypes.chocolateNut:
                 specific = chocolateNut;
+                break;
             case PastryTypes.plain:
-                specific = plain;            
+                specific = plain;   
+                break;         
         }
 
         if (heated) {
