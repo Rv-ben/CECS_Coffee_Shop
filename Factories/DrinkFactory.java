@@ -23,11 +23,12 @@ public class DrinkFactory implements Factory{
      * @return Product Object 
      */
     public Product createProduct(Object typeSize, Object decorators) {
+
         Drink drink;
         TypeSizeStruct details = (TypeSizeStruct)typeSize;
 
 
-        drink = drinkType(details.type, details.size,details.spec);
+        drink = drinkType(details);
 
         //Checks if there decorators
         if(decorators != null){
@@ -47,10 +48,11 @@ public class DrinkFactory implements Factory{
      * @param size Size Enum
      * @return Drink Object, null if not listed
      */
-    public Drink drinkType(DrinkTypes type,Sizes size,DrinkTypes spec){
-        switch(type){
-            case coffee: return new Coffee(size,spec);
-            case tea: return new Tea(size, spec);
+    public Drink drinkType(TypeSizeStruct details){
+
+        switch(details.type){
+            case coffee: return new Coffee(details.size,details.spec);
+            case tea: return new Tea(details.size, details.spec,details.sweetness);
         }
         return null;
     }
