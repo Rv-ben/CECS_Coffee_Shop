@@ -27,7 +27,6 @@ public class test{
         coffee.size = Sizes.medium;
         coffee.type = DrinkTypes.coffee;
         coffee.spec = DrinkTypes.almondLatte;
-
         final Product p = Dfactory.createProduct(tea, listOfToppingTypes);
 
         final Product p1 = Dfactory.createProduct(coffee, listOfToppingTypes);
@@ -40,8 +39,15 @@ public class test{
             System.out.println(listOfProduct.get(0).getDescription());
         }
 
-        
 
-        //Dolly this is a test
+        Product p = Dfactory.createProduct(tea,listOfToppingTypes);
+        Product p1 = Dfactory.createProduct(coffee, listOfToppingTypes);
+         listOfProducts.add(p);
+         listOfProducts.add(p1);
+         listOfProducts.add(p3);
+         for (int i = 0; i < listOfProducts.size(); i++){
+             System.out.println(listOfProducts.get(i).getCost());
+             System.out.println(listOfProducts.get(i).getDescription());
+         }
     }
 }
