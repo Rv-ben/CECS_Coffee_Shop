@@ -1,7 +1,7 @@
 package Decorators;
 
 import Products.Drink;
-/** Represens topping
+/** Represents toppings to be put on products
  * @version 1.0
  * @author tansr
  */
