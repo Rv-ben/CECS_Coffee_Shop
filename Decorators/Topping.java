@@ -25,5 +25,15 @@ public abstract class Topping extends Drink{
         return base;
     }
 
-
+    
+ /** getDescription
+  * @return A string with the topping name appended.
+  * 
+  */
+    public abstract String getDescription();
+ /** getCost
+  * @return the cost of this topping plus the base price
+  * 
+  */
+    public abstract double getCost();
 }
