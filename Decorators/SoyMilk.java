@@ -8,15 +8,20 @@ package Decorators;
 import Products.Drink;
 
 /**
- *
+ *Extension of topping
  * @author tansr
  */
 public class SoyMilk extends Topping {
-    
+    /**
+     *Soymilk constructor
+     * @param base - takes base for topping to be added to
+     * @author tansr
+     */
     public SoyMilk(Drink base){
         super(base);
     }
-
+    
+      
     @Override
     public String getDescription() {
         return base.getDescription() + "Added: Soy Milk\n";
