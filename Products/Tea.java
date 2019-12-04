@@ -5,10 +5,12 @@ import enums.*;
 public class Tea extends Drink {
 	DrinkTypes spec;
 	
+	double sweetness;
 	
-    public Tea(Sizes size,DrinkTypes spec){
+    public Tea(Sizes size,DrinkTypes spec,double sweetness){
         super("Tea", size);
-        this.spec = spec;
+		this.spec = spec;
+		this.sweetness = sweetness;
     }
 
     public double getCost(){
@@ -28,6 +30,6 @@ public class Tea extends Drink {
     }
     public String getDescription(){
     	
-       return spec.name() + "\n";
+       return spec.name() + " Sweetness: "+ sweetness+ "\n";
     }
 }
