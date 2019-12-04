@@ -22,7 +22,7 @@ public class PastryFactory implements Factory{
      */
     public Product createProduct(Object pastryType, Object spec) {
         Pastry pastry = null;
-        pastry = getPastry(pastryType, spec);
+        pastry = (Pastry) getPastry(pastryType, spec);
         
         return pastry;
     }
@@ -35,18 +35,28 @@ public class PastryFactory implements Factory{
      * @return 
      */
     public Product createProduct(Object pastryType, Object spec, boolean heated) {
-        PastryTypes specific;
-        switch(spec) {
-            case PastryTypes.chocolateNut:
-                specific = chocolateNut;
-            case PastryTypes.plain:
-                specific = plain;            
+        Pastry pastry = null;
+    	//PastryTypes specific;
+        switch((PastryTypes)spec) {
+            case chocolateNut:
+                //specific = PastryTypes.chocolateNut;
+                if (heated) {
+                	pastry = new Croissant(PastryTypes.croissant, PastryTypes.chocolateNut, true);
+                }
+                pastry = new Croissant(PastryTypes.croissant, PastryTypes.chocolateNut, false);
+            case plain:
+                //specific = PastryTypes.plain;       
+                if (heated) {
+                	pastry = new Croissant(PastryTypes.croissant, PastryTypes.plain, true);
+                }
+                pastry =  new Croissant(PastryTypes.croissant, PastryTypes.plain, false);
         }
-
-        if (heated) {
-            return new Croissant(PastryTypes.croissant, specific, true);
-        }
-        return new Croissant(PastryTypes.croissant, specific, false);
+//
+//        if (heated) {
+//            return new Croissant(PastryTypes.croissant, specific, true);
+//        }
+//        return new Croissant(PastryTypes.croissant, specific, false);
+		return pastry;
     }
 
     /**
@@ -64,5 +74,6 @@ public class PastryFactory implements Factory{
         case macaroon:
             return new Macaroon(PastryTypes.macaroon, PastryTypes.variety);
         }
+		return null;
     }
 }
