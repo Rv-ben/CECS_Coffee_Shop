@@ -11,7 +11,7 @@ import Products.Drink;
  *
  * @author tansr
  */
-public class HalfHalf extends Milk {
+public class HalfHalf extends Topping {
      public HalfHalf(Drink base){
         super(base);
     }

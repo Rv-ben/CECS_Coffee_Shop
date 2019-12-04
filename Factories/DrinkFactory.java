@@ -29,9 +29,13 @@ public class DrinkFactory implements Factory{
 
         drink = drinkType(details.type, details.size,details.spec);
 
+        //Checks if there decorators
+        if(decorators != null){
         
-        for(ToppingTypes i: (ArrayList<ToppingTypes>)decorators){
-            drink = addDecorators(i, drink);
+            for(ToppingTypes i: (ArrayList<ToppingTypes>)decorators){
+                drink = addDecorators(i, drink);
+            }
+
         }
 
         return drink;
@@ -60,13 +64,11 @@ public class DrinkFactory implements Factory{
     public Drink addDecorators(ToppingTypes topping,Drink drink){
 
         switch(topping){
-            case milk: return new Milk(drink);
             case soyMilk: return new SoyMilk(drink);
             case halfHalf: return new HalfHalf(drink);
             case boba: return new Boba(drink);
             case poppingBoba: return new PoppingBoba(drink);
-            case jelly: return new Jelly(drink);
-            
+            case passionFruitJelly: return new PassionFruitJelly(drink);
             case lycheeJelly: return new LycheeJelly(drink);
             case grassJelly: return new GrassJelly(drink);
             case coconutJelly: return new CoconutJelly(drink);

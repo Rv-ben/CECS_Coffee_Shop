@@ -1,6 +1,6 @@
 package enums;
 
 public enum ToppingTypes{
-    milk,halfHalf,soyMilk,boba,poppingBoba,jelly,passionFruitJelly,lycheeJelly,
+    halfHalf,soyMilk,boba,poppingBoba,passionFruitJelly,lycheeJelly,
     grassJelly,coconutJelly,whipCream
 }
