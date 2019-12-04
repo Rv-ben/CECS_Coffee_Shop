@@ -5,45 +5,44 @@ import Products.*;
 import enums.*;
 
 public class test{
-    public static void main(final String args[]) {
-        final ArrayList<ToppingTypes> listOfToppingTypes = new ArrayList<ToppingTypes>();
-        // listOfToppingTypes = null;
-        final ArrayList<Product> listOfProducts = new ArrayList<Product>();
+    public static void main(String args[]) {
+        ArrayList<ToppingTypes> listOfToppingTypes = new ArrayList<ToppingTypes>();
+        ArrayList<Product> listOfProducts = new ArrayList<Product>();
 
-        final DrinkFactory Dfactory = new DrinkFactory();
+        DrinkFactory Dfactory = new DrinkFactory();
+        TypeSizeStruct tea = new TypeSizeStruct();
+        TypeSizeStruct coffee = new TypeSizeStruct();
+        PastryFactory croissant = new PastryFactory();
 
-        final TypeSizeStruct tea = new TypeSizeStruct();
-
-        final TypeSizeStruct coffee = new TypeSizeStruct();
-
+        // creating tea
         tea.size = Sizes.large;
         tea.type = DrinkTypes.tea;
         tea.spec = DrinkTypes.summerMintTea;
 
+        // creating coffee
+        coffee.size = Sizes.medium;
+        coffee.type = DrinkTypes.coffee;
+        coffee.spec = DrinkTypes.almondLatte;
+
+        // adding toppings
         listOfToppingTypes.add(ToppingTypes.boba);
         listOfToppingTypes.add(ToppingTypes.poppingBoba);
         listOfToppingTypes.add(ToppingTypes.freshStrawberry);
 
-        coffee.size = Sizes.medium;
-        coffee.type = DrinkTypes.coffee;
-        coffee.spec = DrinkTypes.almondLatte;
+        // creating products
         final Product p = Dfactory.createProduct(tea, listOfToppingTypes);
-
         final Product p1 = Dfactory.createProduct(coffee, listOfToppingTypes);
-        
+        final Product p2 = croissant.createProduct(PastryTypes.croissant, PastryTypes.chocolateNut, true);
+
+        // adding products into the arraylist
         listOfProducts.add(p);
         listOfProducts.add(p1);
+        listOfProducts.add(p2);
 
+        // displaying the all products
         for (int i = 0; i < listOfProducts.size(); i++){
             System.out.println(listOfProducts.get(0).getCost());
             System.out.println(listOfProducts.get(0).getDescription());
         }
-
-         listOfProducts.add(p);
-         listOfProducts.add(p1);
-         for (int i = 0; i < listOfProducts.size(); i++){
-             System.out.println(listOfProducts.get(i).getCost());
-             System.out.println(listOfProducts.get(i).getDescription());
-         }
     }
 }
