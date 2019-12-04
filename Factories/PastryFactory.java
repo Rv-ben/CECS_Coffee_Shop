@@ -1,3 +1,6 @@
+package Factories;
+
+import Products.Product;
 
 
 import java.util.ArrayList;
@@ -21,7 +24,7 @@ public class PastryFactory implements Factory{
      * @return Product Object 
      */
     public Product createProduct(Object pastryType, Object spec) {
-        Pastry pastry = null;
+        Product pastry = null;
         pastry = getPastry(pastryType, spec);
         
         return pastry;
@@ -46,9 +49,9 @@ public class PastryFactory implements Factory{
         }
 
         if (heated) {
-            return new Croissant(PastryTypes.croissant, specific, true);
+            return new Pastry(PastryTypes.croissant, specific, true);
         }
-        return new Croissant(PastryTypes.croissant, specific, false);
+        return new Pastry(PastryTypes.croissant, specific, false);
     }
 
     /**
@@ -61,10 +64,10 @@ public class PastryFactory implements Factory{
         switch (pastryType) {
         case cookie:
             if (spec == PastryTypes.oatmeal)
-                return new Cookie(PastryTypes.cookie, PastryTypes.oatmeal);
-            return new Cookie(PastryTypes.cookie, PastryTypes.plain);
+                return new Pastry(PastryTypes.cookie, PastryTypes.oatmeal);
+            return new Pastry(PastryTypes.cookie, PastryTypes.plain);
         case macaroon:
-            return new Macaroon(PastryTypes.macaroon, PastryTypes.variety);
+            return new Pastry(PastryTypes.macaroon, PastryTypes.variety);
         }
     }
 }
