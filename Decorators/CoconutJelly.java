@@ -19,7 +19,7 @@ public class CoconutJelly extends Topping {
 
     @Override
     public String getDescription() {
-        return base.getDescription() + "Added: Coconut Jelly";
+        return base.getDescription() + "Added: Coconut Jelly\n";
     }
 
     @Override

@@ -19,7 +19,7 @@ public class Boba extends Topping {
 
     @Override
     public String getDescription() {
-        return base.getDescription() + "Added: Boba";
+        return base.getDescription() + "Added: Boba\n";
     }
 
     @Override

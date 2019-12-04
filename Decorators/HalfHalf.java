@@ -18,7 +18,7 @@ public class HalfHalf extends Topping {
 
     @Override
     public String getDescription() {
-        return base.getDescription() + "Added: Half and Half";
+        return base.getDescription() + "Added: Half and Half\n";
     }
 
     @Override

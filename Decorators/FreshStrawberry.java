@@ -10,7 +10,7 @@ public class FreshStrawberry  extends Topping{
 
 	@Override
 	public String getDescription() {
-		return base.getDescription() + "Added: Fresh Strawberry";
+		return base.getDescription() + "Added: Fresh Strawberry\n";
 	}
 	
 	@Override

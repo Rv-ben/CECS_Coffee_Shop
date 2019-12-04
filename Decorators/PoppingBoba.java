@@ -17,7 +17,7 @@ public class PoppingBoba extends Topping {
 
     @Override
     public String getDescription() {
-        return base.getDescription() + "Added: Popping Boba";
+        return base.getDescription() + "Added: Popping Boba\n";
     }
 
     @Override

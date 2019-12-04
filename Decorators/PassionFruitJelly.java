@@ -17,7 +17,7 @@ public class PassionFruitJelly extends Topping {
 
     @Override
     public String getDescription() {
-        return base.getDescription() + "Added: Passion Fruit Jelly";
+        return base.getDescription() + "Added: Passion Fruit Jelly\n";
     }
 
     @Override
