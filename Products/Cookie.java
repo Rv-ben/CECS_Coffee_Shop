@@ -14,10 +14,10 @@ public class Cookie extends Pastry{
     public double getCost(PastryTypes spec){
         double cost = super.getCost();
         if(qty%6 == 0){
-            cost = (int)(qty/6) * 9;
+            cost = cost*(int)(qty/6) * 9;
         }
         else if(qty%6 != 0 ){
-            cost = (int)(qty/6)* 9 + cost*(qty%6);
+            cost = cost*(int)(qty/6)* 9 + cost*(qty%6);
         }
 
         return cost;
