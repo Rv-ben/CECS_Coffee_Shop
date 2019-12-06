@@ -23,7 +23,7 @@ public abstract class Pastry implements Product {
                 cost = 2;
                 break;
             case cookie:
-                cost = 1.00;
+                cost = 1.50;
                 break;
             case macaroon:
                 cost = 2.00;

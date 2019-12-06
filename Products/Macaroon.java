@@ -12,7 +12,7 @@ public class Macaroon extends Pastry{
         this.qty = qty;
     }
 
-    public double getCost(PastryTypes spec){
+    public double getCost(){
         double cost = super.getCost();
 
         if(qty%6 == 0){

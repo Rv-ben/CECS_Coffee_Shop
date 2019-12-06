@@ -11,10 +11,12 @@ public class Croissant extends Pastry{
         this.heated = heated;
     }
 
-    public double getCost(PastryTypes spec){
+    public double getCost(){
         double cost = super.getCost();
-        if (heated == true)
+        if (heated == true){
             cost += 0.50;
+            System.out.print("here");
+        }
         switch(spec) {
                case chocolateNut:
                     cost += 1.00;

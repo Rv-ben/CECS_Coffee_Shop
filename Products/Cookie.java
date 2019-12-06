@@ -9,15 +9,16 @@ public class Cookie extends Pastry{
     public Cookie(PastryTypes general, PastryTypes spec,int qty){
         super("Cookie", general);
         this.spec = spec;
+        this.qty = qty;
     }
 
-    public double getCost(PastryTypes spec){
+    public double getCost(){
         double cost = super.getCost();
-        if(qty%6 == 0){
-            cost = (int)(qty/6) * 3;
+        if(qty%3 == 0){
+            cost = (int)(qty/3) * 3;
         }
-        else if(qty%6 != 0 ){
-            cost = (int)(qty/6)* 3 + cost*(qty%6);
+        else if(qty%3 != 0 ){
+            cost = (int)(qty/3)* 3 + cost*(qty%3);
         }
 
         return cost;

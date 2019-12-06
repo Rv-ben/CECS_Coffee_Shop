@@ -102,11 +102,42 @@ public class test{
 
         Receipt r = new Receipt(listOfProducts, .10);
 
+        System.out.println("\n\n\n\n");
+
+        r.printReceipt();
+
+        Coupon drinkCoupon = new Coupon();
+        drinkCoupon.drink = true;
+        drinkCoupon.percent = .5;
+
+        r.setCoupon(drinkCoupon);
+
+        System.out.println("\n\n\n\n");
+        r.printReceipt();
+
+        
+        Coupon pastryCoupon = new Coupon();
+        pastryCoupon.pastry = true;
+        pastryCoupon.drink = false;
+        pastryCoupon.percent = .5;
+
+        r.setCoupon(pastryCoupon);
+
+        System.out.println("\n\n\n\n");
 
         r.printReceipt();
 
 
+        Coupon coupon = new Coupon();
+        coupon.drink = true;
+        coupon.pastry = true;
+        coupon.percent = .5;
 
+        r.setCoupon(coupon);
+
+        System.out.println("\n\n\n\n");
+
+        r.printReceipt();
 
 
 
